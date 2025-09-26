@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agencia de Viajes - Landing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header y navegación -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">TRAVEL THE WORLD</h1>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#paquetes">Paquetes</a></li>
+        <li><a href="#galeria">Destinos</a></li>
+        <li><a href="#precios">Precios</a></li>
+        <li><a href="#reserva">Reserva</a></li>
+      </ul>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-content">
+      <h2>NO TE LIMITES A CONOCER EL MUNDO</h2>
+      <p>Encuentra los mejores destinos y paquetes turísticos</p>
+      <a href="#paquetes" class="cta">Ver Paquetes</a>
+    </div>
+  </section>
+
+  <!-- Paquetes turísticos -->
+  <section id="paquetes" class="paquetes">
+    <h2>Paquetes Turísticos</h2>
+    <div class="cards">
+
+        <!-- Caribe -->
+        <article class="card">
+            <div class="carousel">
+                <img src="img/caribe.jpg" alt="Playa Caribe">
+                <img src="img/caribe2.jpg" alt="Resort Caribe">
+                <img src="img/caribe3.jpg" alt="Piscina Caribe">
+            </div>
+            <h3>Caribe Todo Incluido</h3>
+            <p><strong>Precio: $4,000.000 COP</strong></p>
+            <ul>
+                <li>7 noches en resort 5 ★ frente al mar</li>
+                <li>Comidas y bebidas ilimitadas</li>
+                <li>Actividades acuáticas</li>
+                <li>Traslados aeropuerto-hotel</li>
+            </ul>
+            <button class="buy-btn" onclick="location.href='#reserva'">Comprar paquete</button>
+        </article>
+
+        <!-- Safari -->
+        <article class="card">
+            <div class="carousel">
+                <img src="img/africa1.jpg" alt="Safari en África">
+                <img src="img/africa2.jpg" alt="Leones en Safari">
+                <img src="img/africa3.jpg" alt="Sabana africana">
+            </div>
+            <h3>Safari en África</h3>
+            <p><strong>Precio: $12,000.000 COP</strong></p>
+            <ul>
+                <li>10 días de safari en Kenia y Tanzania</li>
+                <li>Guía experto en fauna africana</li>
+                <li>Excursiones en jeep 4x4</li>
+                <li>Alojamiento en lodges de lujo</li>
+            </ul>
+            <button class="buy-btn" onclick="location.href='#reserva'">Comprar paquete</button>
+        </article>
+
+        <!-- Europa -->
+        <article class="card">
+            <div class="carousel">
+                <img src="img/europa1.jpg" alt="Europa París">
+                <img src="img/europa2.jpg" alt="Roma Coliseo">
+                <img src="img/europa3.jpg" alt="Madrid">
+            </div>
+            <h3>Europa Clásica</h3>
+            <p><strong>Precio: $10,000.000 COP</strong></p>
+            <ul>
+                <li>Tour de 12 días por París, Roma y Madrid</li>
+                <li>Guías en español</li>
+                <li>Entradas a museos y monumentos</li>
+                <li>Hoteles 5 ★ con desayuno incluido</li>
+            </ul>
+            <button class="buy-btn" onclick="location.href='#reserva'">Comprar paquete</button>
+        </article>
+
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria">
+    <h2>Galería de Destinos</h2>
+    <div class="grid">
+      <img src="img/playa.jpg" alt="Playa">
+      <img src="img/safari.jpg" alt="Safari">
+      <img src="img/roma.jpg" alt="Europa">
+      <img src="img/montañas.jpg" alt="Montañas">
+      <img src="img/centralpark.jpg" alt="Ciudad">
+      <img src="img/templo.jpg" alt="Templo">
+    </div>
+  </section>
+
+  <!-- Tabla de precios -->
+  <section id="precios">
+    <h2>Precios</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Paquete</th>
+          <th>Duración</th>
+          <th>Incluye</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Básico</td>
+          <td>3 días</td>
+          <td>Hotel</td>
+          <td>$1,200.000</td>
+        </tr>
+        <tr>
+          <td>Estándar</td>
+          <td>7 días</td>
+          <td>Vuelo + Hotel</td>
+          <td>$2,900.000</td>
+        </tr>
+        <tr>
+          <td>Premium</td>
+          <td>14 días</td>
+          <td>Vuelo + Hotel + Tours</td>
+          <td>$4,000.000</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Formulario de reserva -->
+  <section id="reserva">
+    <h2>Formulario de Reserva</h2>
+    <form onsubmit="return handleSubmit(event)">
+      <div class="row">
+        <div>
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" required>
+        </div>
+        <div>
+          <label for="email">Correo</label>
+          <input id="email" type="email" required>
+        </div>
+      </div>
+      <label for="paquete">Paquete</label>
+      <select id="paquete" name="paquete">
+        <option>Europa Clásica</option>
+        <option>Safari en África</option>
+        <option>Caribe Todo Incluido</option>
+      </select>
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" required></textarea>
+      <button class="cta" type="submit">Reservar</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 - Todos los derechos reservados</p>
+    <ul>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">YouTube</a></li>
+    </ul>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
